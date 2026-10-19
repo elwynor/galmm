@@ -1,0 +1,496 @@
+
+LEVEL6 {Menu Magician}
+
+INUSE {<ESC>[1;35m
+...Sorry, someone else is using the Menu Magician right now.  Please try
+again in a few minutes.
+} T Magician is in use
+
+BIGHELP {<ESC>[1;35m
+...Help for Menu Magician <ESC>[37m<TV:HVSMM_VERSION><ESC>[35m:
+<ESC>[1;36m
+You are currently editing the <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m page in your menu tree.  To make
+a change to this page, simply choose the letter corresponding with the
+field you wish to edit.  Any changes you make will be immediately
+visible on your menu tree when you (S)ave the page.
+
+Note that the options denoted by asterisks on your menu could cause
+problems with the system if other users are accessing the page you are
+editing.  In addition, these operations may cause your system to pause
+momentarily while handling multiple pages.  This pause should not last
+more than a few seconds.
+
+Press <Return> to continue... } T Big help screen
+
+BIGMENU {<ESC>[1;35m
+...Miscellaneous commands:
+
+  <ESC>[36m(S) <ESC>[32mSave changes to page          <ESC>[31m* <ESC>[36m(!) <ESC>[32mDelete the current page
+  <ESC>[36m(J) <ESC>[32mJump to another page          <ESC>[31m* <ESC>[36m(T) <ESC>[32mChange the type of this page
+  <ESC>[36m(P) <ESC>[32mJump to parent page           <ESC>[31m* <ESC>[36m(R) <ESC>[32mRename this page
+  <ESC>[36m(X) <ESC>[32mExit editing this page
+} T Big menu!
+
+COMMON {<ESC>[1;35m
+...Working with page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m   (Parent page: <ESC>[37m<TV:HVSMM_PARENT><ESC>[36m)
+
+  <ESC>[36m(D) <ESC>[32mDisabled <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_DISABLED:L:3>          <ESC>[36m(G) <ESC>[32mAllow /GO <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_GOTO:R:3>
+  <ESC>[36m(K) <ESC>[32mKey for /GO <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_GOKEY>
+} T Common stuff
+
+MODULE {<ESC>[1;35m
+...Module page options:
+
+  <ESC>[36m(M) <ESC>[32mModule name <ESC>[0m.......... <ESC>[1;37m<TV:HVSMM_MODULE>
+  <ESC>[36m(C) <ESC>[32mCommand string <ESC>[0m....... <ESC>[1;37m<TV:HVSMM_COMMAND>
+  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_HEADER>
+} T Module page info
+
+FILEP {<ESC>[1;35m
+...File page options:
+
+  <ESC>[36m(F) <ESC>[32mDisplay file <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_FILE><ESC>[36m
+  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_HEADER>
+} T File page info
+
+MENU {<ESC>[1;35m
+...Menu page options:
+
+  <ESC>[1;36m(A) <ESC>[32mAuto-select <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_AUTO:L:3>          <ESC>[36m(N) <ESC>[32mDefault display <ESC>[0m... <ESC>[1;37m<TV:HVSMM_DEFDISP>
+  <ESC>[1;36m(F) <ESC>[32mDisplay file(s) <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_FILE:L:12>
+  <ESC>[1;36m(L) <ESC>[32mShort title <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_TITLE>
+
+  <ESC>[1;36m(C) <ESC>[32mDisplay child pages             <ESC>[1;36m(M) <ESC>[32mDisplay menu selections
+} T Menu page info
+
+MENUHDR {
+<ESC>[1;32m##<ESC>[36m Sel Description                     <ESC>[32m##<ESC>[36m Sel Description<ESC>[0;36m
+-- --- ------------------------------- -- --- --------------------<ESC>[1;37m
+} T Menu page info header
+
+MENUPHDR {
+<ESC>[1;32m##<ESC>[36m Sel Page name                       <ESC>[32m##<ESC>[36m Sel Page name<ESC>[0;36m
+-- --- ------------------------------- -- --- --------------------<ESC>[1;37m
+} T Menu page info header
+
+MENULIN {<ESC>[32m<TV:HVSMM_NUM:R:2><ESC>[37m  <TV:HVSMM_SEL>  <TV:HVSMM_TEXT:L:31> <ESC>[32m<TV:HVSMM_NUM2:R:2><ESC>[37m  <TV:HVSMM_SEL2>  <TV:HVSMM_TEXT2:L:31>
+} T Menu line
+
+MENUEND {<ESC>[32m<TV:HVSMM_NUM:R:2><ESC>[37m  <TV:HVSMM_SEL>  <TV:HVSMM_TEXT:L:31>
+<ESC>[1;35m
+To edit a menu selection, simply enter its number at the prompt.
+} T Last menu line
+
+PROMPT {<ESC>[1;36m
+Page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m
+Menu command? (<ESC>[37m?=Help<ESC>[36m): } T Menu prompt
+
+BIGENTER {<ESC>[1;35m
+...Menu Magician.<ESC>[36m
+
+To edit a page, enter the name of the page at the prompt.  If you wish
+to create a new orphan page, enter "<ESC>[37m<TV:HVSMM_NEWCMD><ESC>[36m".  You can get a display of
+the menu tree by entering "<ESC>[37m<TV:HVSMM_VIEWCMD><ESC>[36m".  To search the menu tree for a particular
+string, enter "<ESC>[37m!SEARCH<ESC>[36m".
+Sysops can change Menu Magician's settings with "<ESC>[37m!SETUP<ESC>[36m".
+} T Big entry
+
+PICKPAG {<ESC>[1;36m
+Edit which page? (<ESC>[37mX=Exit<ESC>[36m): } T Entry page prompt
+
+PICKHLP {<ESC>[1;35m...Menu Magician entry help.<ESC>[36m
+
+To enter Menu Magician, you need to select a page you wish to edit.
+This page can be any valid page in your menuing system, such as "TOP".
+Simply enter the name of the page and it will appear for editing.
+
+If you wish to create a new orphan page, you can enter "<ESC>[37m<TV:HVSMM_NEWCMD><ESC>[36m" at the
+next prompt.  After you choose a name for the new page, you will be
+placed into the editor to edit it.
+
+Alternately, you can view a graphic display of your menu tree by
+entering "<ESC>[37m<TV:HVSMM_VIEWCMD><ESC>[36m" at the next prompt.  This display is exactly like the
+off-line display, with each page in a different color corresponding to
+its type.
+
+To change Menu Magician's own settings (sysops only), enter "<ESC>[37m!SETUP<ESC>[36m".
+} T Entry page help
+
+GOTO {<ESC>[1;36m
+Jump to which page name? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Goto page prompt
+
+GOTOM {<ESC>[1;36m
+Jump to which page name or menu selection? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Goto page menu prompt
+
+NOPAR {<ESC>[1;35m...This page has no parent!
+} T No parent page (jump)
+
+NOGOTO {<ESC>[1;35m...There is no page by that name.
+} T No such page (jump)
+
+NOPAGE {<ESC>[1;35m...There is no page by that name.  For help, enter "<ESC>[37m?<ESC>[35m".
+} T No such page (entry)
+
+SAVED {<ESC>[1;32m...<ESC>[37m<TV:HVSMM_PAGE><ESC>[32m: Page saved.
+} T Saved ok
+
+DISTOG {<ESC>[1;32m...This page is <TV:HVSMM_VALUE> disabled.
+} T Disable toggle
+
+ALGOTOG {<ESC>[1;32m...Global /GO to this page is <TV:HVSMM_VALUE> disabled.
+} T Toggle global go
+
+GOSET {<ESC>[1;32m...Key required for /GO is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T /GO key set ok
+
+KEYPROM {<ESC>[1;36m
+Which key is required for /GO? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Set /GO key prompt
+
+MODPROM {<ESC>[1;36m
+Which module name or number? (<ESC>[37m?=List, <CR>=Abort<ESC>[36m): } T Set module prompt
+
+NOMOD {<ESC>[1;35m...No such module is present.  Set anyway? (y/N): } T No module here
+
+SETMOD {<ESC>[1;32m...Module link is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Module info is set
+
+CMDSTG {<ESC>[1;36m
+Command string for this module? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Set command string prompt
+
+CMDSET {<ESC>[1;32m...Command string is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Command string is set
+
+MPHPROM {<ESC>[1;36m
+Display module page header prior to entry? (<ESC>[37mY=Yes, N=No, <CR>=Abort<ESC>[36m): } T Set module page header
+
+MPHSET {<ESC>[1;32m...Module page header is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Module page header set
+
+FILPROM {<ESC>[1;36m
+Which file does this page display? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Set file page
+
+FILSET {<ESC>[1;32m...File for this page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T File set
+
+FPHPROM {<ESC>[1;36m
+Display file page header prior to file output? (<ESC>[37mY=Yes, N=No, <CR>=Abort<ESC>[36m): } T Set file page header
+
+FPHSET {<ESC>[1;32m...File page header is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T File page header set
+
+NOTTOP {<ESC>[1;35m...Sorry, that option is not available for the "TOP" page.
+} T Not on TOP, you don't!
+
+NOTSAVED {<ESC>[1;36m...Page has been edited but not saved.  Save it? (y/n): } T Check for save
+
+AUTSET {<ESC>[1;32m...Auto-select for this menu page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Auto-select set
+
+MFILPROM {<ESC>[1;36m
+What is the base name for this menu's files? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Menu file prompt
+
+MTTLPROM {<ESC>[1;36m
+What is the short title? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Title prompt
+
+TTLSET {<ESC>[1;32m...Short title for this page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Title set
+
+DFTSET {<ESC>[1;32m...Default display for this menu page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Default display set
+
+CHOHELP {<ESC>[1;35m...Editing menu selection help.<ESC>[36m
+
+You are editing a selection on a menu page.  To change any of the
+displayed fields, simply enter the letter corresponding with the field.
+When you are done editing the menu selection, enter "<ESC>[37mX<ESC>[36m" to return to this
+selection's menu page.
+
+To re-display this selection, hit <ESC>[37mEnter<ESC>[36m.
+} T Choice help
+
+EDTCHO {<ESC>[1;35m
+...Currently editing menu selection #<TV:HVSMM_NUM> on the <ESC>[37m<TV:HVSMM_PAGE><ESC>[35m page:<ESC>[36m
+
+  (C) <ESC>[32mSelection character <ESC>[0;36m......... <ESC>[1;37m<TV:HVSMM_SEL><ESC>[36m
+  (H) <ESC>[32mShort description <ESC>[0;36m........... <ESC>[1;37m<TV:HVSMM_SHORT><ESC>[36m
+  (A) <ESC>[32mKey required to access <ESC>[0;36m...... <ESC>[1;37m<TV:HVSMM_KEY><ESC>[36m
+  (D) <ESC>[32mDisplay if no access <ESC>[0;36m........ <ESC>[1;37m<TV:HVSMM_DISPLAY><ESC>[36m
+  (P) <ESC>[32mDestination page <ESC>[0;36m............ <ESC>[1;37m<TV:HVSMM_DEST><ESC>[36m
+  (W) <ESC>[32mSwap this selection with another
+} T Menu choice
+
+CHOPROM {<ESC>[1;36m
+Selection #<TV:HVSMM_NUM> on page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m
+Menu selection command? (<ESC>[37m?=Help<ESC>[36m): } T Menu prompt
+
+SELPROM {<ESC>[1;36m
+Selection characters in use: <ESC>[37m<TV:HVSMM_VALUE><ESC>[36m
+
+New selection character? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Selection char prompt
+
+SELSET {<ESC>[1;32m...New selection character: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Selection set
+
+ALRSEL {<ESC>[1;35m...Another option on this page already uses that selection character.
+} T Already used that char on this page
+
+CKEYPROM {<ESC>[1;36m
+New key to use this option? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Selection key prompt
+
+CKEYSET {<ESC>[1;32m...New key required for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Set choice key
+
+CDISPROM {<ESC>[1;36m
+Display option? (<ESC>[37m<CR>=Abort,D=Dim,H=Hide,S=Show<ESC>[36m): } T Display prompt
+
+CDISSET {<ESC>[1;32m...New display mode for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Display set
+
+CPAGPROM {<ESC>[1;36m
+New destination page? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Dest page prompt
+
+CPAGSET {<ESC>[1;32m...New destination page for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Page has been set
+
+CPAGALR {
+<ESC>[1;5;31m* WARNING!<ESC>[0;1;31m
+
+This menu selection already has a valid destination page.  If you change
+the name of the destination page, a new page will be created and the
+original destination page will become an orphan page.  To abort this
+operation, press <Return> at the next prompt.
+} T Page already exists warning
+
+CORPHED {<ESC>[1;31m...Moving original page, <ESC>[37m<TV:HVSMM_VALUE><ESC>[31m, to top of menu (orphan page).
+} T Created orphan page
+
+CMAKED {<ESC>[1;32m...Created new page: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Made a new page
+
+CPAGTYP {<ESC>[1;36m
+What type of page is the destination? (<ESC>[37mM=Menu, L=Module, F=File, X=Abort<ESC>[36m): } T Get page type of new one
+
+CPAGNORP {<ESC>[1;35m
+The <ESC>[37m<TV:HVSMM_VALUE><ESC>[35m page already exists as a child page!<ESC>[36m
+
+If you wish to copy the page and all of its children, please use the
+off-line Design Menu Tree utility.  Otherwise, use a unique page name
+to create a new page.
+} T Already got that page in use
+
+CPAGELSE {<ESC>[1;35m
+That page already exists as an orphan page.<ESC>[36m
+
+If you wish to move that page and all of its children to this menu page,
+then select "<ESC>[37mY<ESC>[36m" at the next prompt.  If you want to create a new page for
+this menu selection, then choose "<ESC>[37mN<ESC>[36m" and enter a different page name for
+this selection.
+
+<ESC>[36mProceed with this operation? (<ESC>[37mY=Yes, N=No<ESC>[36m): } T Already somewhere else
+
+CSHOPROM {<ESC>[1;36m
+New short description? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T New short desc prompt
+
+CSHOSET {<ESC>[1;32m...Set short description: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Short description set
+
+NOCWARN {<ESC>[1;35m
+...Note: The selection character for this option has not been set yet.
+This menu option will not be usable until a selection character is
+chosen.
+} T Warning for no selection character
+
+SIDEBAD {<ESC>[0;1;5;31m
+* WARNING!<ESC>[0;1;31m
+
+This operation could have bad side-effects on users that are currently
+logged onto the system.  You should only use this function when no
+other users are on-line, unless you are ABSOLUTELY sure that no users
+are currently using or will be automatically returning to this page (or
+one of its children).  If this page is loaded by the BBS while you
+are using this function, the system could crash.  Do not use this
+function unless you are very sure of what you are doing.<ESC>[36m
+
+Do you want to proceed? (<ESC>[37mY=Yes<ESC>[36m): } T Big bad warning
+
+SIDEWARN {<ESC>[1;31m
+* WARNING!
+
+This operation could have bad side-effects.  If a user logs on while
+you are using this function or you automatically return through the
+menu tree to this page, the system could crash.  Do not use this
+function unless you are absolutely sure of what you are doing.<ESC>[36m
+
+Do you want to proceed? (<ESC>[37mY=Yes<ESC>[36m): } T Big, not so bad, warning
+
+TYPPROM {<ESC>[1;35m
+...Note: Changing the page type erases all information on the page,
+including all menu selections.<ESC>[36m
+
+What type of page is this now? (<ESC>[37mM=Menu, L=Module, F=File, <CR>=Abort<ESC>[37m): } T Set new page type
+
+TYPSET {<ESC>[1;32m...New page type is: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T New type set
+
+BADIDEA {<ESC>[1;35m
+Making serious changes to this page would cause problems with the system,
+since you will be returning to it when you exit Menu Magician.
+
+If you bypass this message, enter Menu Magician from another menu page
+or via global /GO.
+} T Bad idea to muck with this page
+
+TYPWARN {<ESC>[1;35m
+* Changing the type of this menu page will cause all of its child pages
+to become orphans.<ESC>[36m
+
+Are you sure you want to proceed? (<ESC>[37mY=Yes<ESC>[36m): } T Continue with big type-change
+
+DELWARN {<ESC>[1;35m
+* Deleting this menu page will cause all of its child pages to become
+orphans.<ESC>[36m
+
+Are you sure you want to proceed? (<ESC>[37mY=Yes<ESC>[36m): } T Continue with big delete
+
+DELING {<ESC>[1;32m
+...Deleting page: <ESC>[37m<TV:HVSMM_VALUE>
+} T Deleting a page
+
+MOVING {<ESC>[1;32m...Orphaning page: <ESC>[37m<TV:HVSMM_VALUE>
+} T Orphaning a page
+
+ADJING {<ESC>[1;32m...Connecting child page: <ESC>[37m<TV:HVSMM_VALUE>
+} T Adjusting parent field of child page
+
+DELEND {} T End of deletion
+
+CORPNAM {<ESC>[1;36m
+...Name of the new page? (<ESC>[37m<CR>=Abort><ESC>[36m): } T Create orphan name
+
+CORPALR {<ESC>[1;35m
+...A page by that name already exists!
+} T Create orphan already exists
+
+CORPTYP {<ESC>[1;36m
+...What type of page is this? (<ESC>[37mM=Menu, L=Module, F=File, X=Abort<ESC>[36m): } T Create orphan page type
+
+MENUIN {} T User enters Menu Magician
+
+UNKCMD {<ESC>[1;35m
+...Unknown command!  To re-display the current page or selection,
+simply press Return.  For more help, enter "?".
+} T Unknown command
+
+TRHEAD {<ESC>[1;36m
+Menu Tree Display<ESC>[0;37m
+-----------------<ESC>[1m
+} T Menu tree header
+
+TRDONE {
+} T Menu tree footer
+
+INDENT {<ESC>[37m<CHR:195>} T Indented, x-page
+
+LINDENT {<ESC>[37m<CHR:192>} T Indented, last page
+
+MDLIN {<ESC>[32m} T Module in
+
+FILIN {<ESC>[35m} T File in
+
+AUTIN {<ESC>[33m} T Auto-sel in
+
+MENIN {<ESC>[37m} T Menu in
+
+PEGBAR {<ESC>[37m<CHR:179>} T Carried menu bar
+
+KIDS {<TV:HVSMM_PAGE><ESC>[37m<CHR:196><CHR:191>
+} T This page has kids
+
+NOKIDS {<TV:HVSMM_PAGE>
+} T This page has no kids
+
+NOKIDW {<TV:HVSMM_PAGE> <ESC>[31m*
+} T This page has no kids (warning type)
+
+MODSTART {<ESC>[1;37m
+Module list:<ESC>[36m
+} T Module list start
+
+MODEND {} T Module list end
+
+ONEMOD {<TV:HVSMM_NUM:L:3>: <TV:HVSMM_TEXT:L:33>} T One module
+
+MODBRK {
+} T Break in the module list
+
+ABVIEW {
+<ESC>[1;31mView aborted!
+} T Tree view aborted
+
+SWAPWHER {<ESC>[1;36m
+Swap with which other menu selection? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Swap selection prompt
+
+SWAPOK {<ESC>[1;32m...Swapped selection <ESC>[37m<TV:HVSMM_NUM><ESC>[32m with <ESC>[37m<TV:HVSMM_NUM2><ESC>[32m.
+} T Swapped ok
+
+SWAPBAD {<ESC>[1;35m...Invalid number!  Must be from 1 to 25.
+} T Swap failed
+
+RENWHAT {<ESC>[1;36m
+Rename this page to what? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Rename page
+
+REND {<ESC>[1;32m...Renamed page to: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Renamed ok
+
+SEARCHW {<ESC>[1;36m
+Search for what text? (<ESC>[37mX=Abort<ESC>[36m): } T Search prompt
+
+SEARCHH {<ESC>[1;36m
+Searching for "<ESC>[37m<TV:HVSMM_VALUE><ESC>[36m"...<ESC>[0;36m
+
+Page name<ESC>[1;34m
+----------------<ESC>[1;37m
+} T Searching header
+
+SEARCH1 {<TV:HVSMM_PAGE>
+} T Search hit one
+
+SEARCHMT {<ESC>[1;35m(No matches found!)
+} T No hits
+
+BADPAG {<ESC>[1;35m
+...Unable to <TV:HVSMM_ACTION> page: <TV:HVSMM_REASON>
+} T Bad page create/rename
+
+SETHDR {<ESC>[1;35m
+...Menu Magician settings<ESC>[36m
+
+Changes take effect immediately and are kept when the BBS restarts.
+
+} T Settings menu header
+
+SETLINE {  <ESC>[1;36m<TV:HVSMM_NUM:R:2>. <ESC>[32m<TV:HVSMM_LABEL:L:34><ESC>[0m.. <ESC>[1;37m<TV:HVSMM_VALUE>
+} T One line of the settings menu
+
+SETPROM {<ESC>[1;36m
+Change which setting? (<ESC>[37m1-<TV:HVSMM_NUM>, R=Reset all, X=Exit<ESC>[36m): } T Settings menu prompt
+
+SETVAL {<ESC>[1;36m
+<TV:HVSMM_LABEL> is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[36m
+Enter <TV:HVSMM_LIMIT>.
+New value? (<ESC>[37m<CR>=Keep<ESC>[36m): } T New value for a setting
+
+SETOK {<ESC>[1;32m...<TV:HVSMM_LABEL> is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+} T Setting changed
+
+SETBAD {<ESC>[1;35m...That value is not allowed.  Enter <TV:HVSMM_LIMIT>.
+} T Setting value not allowed
+
+SETRST {<ESC>[1;36m
+Reset every setting to its default? (<ESC>[37mY=Yes<ESC>[36m): } T Confirm settings reset
+
+SETRSTD {<ESC>[1;32m...All settings are back to their defaults.
+} T Settings reset
+
+SETNOKEY {<ESC>[1;35m...Only a sysop can change Menu Magician's settings.
+} T No access to settings
