@@ -1,4 +1,4 @@
-/* Build 26.10.19.2 01:12PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   MMVIEW.C                   Menu Magician - Tree view, search, modules    *
  *                                                                           *
@@ -22,7 +22,7 @@
 #include "gcomm.h"
 #include "majorbbs.h"
 #include <windows.h>
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 #define MAXDEPTH 40                  /* deepest tree level drawn with bars   */
 

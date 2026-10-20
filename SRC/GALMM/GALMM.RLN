@@ -1,5 +1,5 @@
 
-                          MENU MAGICIAN  v1.4.0
+                          MENU MAGICIAN  v1.4.1
                      for The Major BBS v10 (32-bit)
 
      Copyright (c) 2026 Elwynor Technologies.
@@ -26,20 +26,22 @@ module, and also its danger: see section 4 before you start.
 2. INSTALLING
 -------------
 
-  1. With the BBS down, copy HVSMM.DLL, HVSMM.MDF, HVSMM.MSG and HVSMM.RLN
+  1. With the BBS down, copy GALMM.DLL, GALMM.MDF, GALMM.MSG and GALMM.RLN
      into your BBS directory.
   2. Run the Menu Tree editor and add Menu Magician to your menu.  Put the
      SYSOP key (or another key only trusted sysops have) on BOTH the menu
      selection and the module page.  Anyone who can use Menu Magician can
      damage your menu tree.  A good choice is an orphan page that you
      reach with /GO.
-  3. Start the BBS.  Menu Magician creates HVSMMSET.DAT, its settings
+  3. Start the BBS.  Menu Magician creates GALMMSET.DAT, its settings
      file, on the first start.
 
 Upgrading from Menu Magician 1.03a or earlier (Worldgroup):
 
-  - With the BBS down, replace HVSMM.DLL and HVSMM.MSG, and copy in HVSMM.MDF
-    and HVSMM.RLN.  The BBS rebuilds HVSMM.MCV from HVSMM.MSG itself.
+  - With the BBS down, delete the old HVSMM.DLL, HVSMM.MDF, HVSMM.MSG and
+    HVSMM.MCV, then install the GALMM files as above.  The files were
+    renamed from HVSMM to GALMM in 1.4.1, so installing does not replace
+    the old ones.  The BBS builds GALMM.MCV from GALMM.MSG itself.
   - No activation code is needed any more.
   - The four configuration options (GLOKEY, GLOCMD, ORPHCMD, VIEWCMD) are
     no longer in the configuration editor.  They start at their usual
@@ -53,6 +55,13 @@ Upgrading from Menu Magician 1.03a or earlier (Worldgroup):
   - Worldgroup's client/server menu tree is no longer edited: The Major
     BBS v10 has terminal mode only.  Any client/server pages in the menu
     file are left as they are.
+
+Upgrading from the 1.4.0 test build (HVSMM files):
+
+  - With the BBS down, delete HVSMM.DLL, HVSMM.MDF, HVSMM.MSG, HVSMM.MCV
+    and HVSMM.RLN, and install the GALMM files.  To keep your settings,
+    rename HVSMMSET.DAT to GALMMSET.DAT; otherwise Menu Magician starts
+    with the defaults.
 
 
 3. GETTING STARTED
@@ -120,7 +129,7 @@ to the Audit Trail.  R resets every setting to its default.
      Commands at the "Edit which page?" prompt.  Change them if they clash
      with a global command from another module.
 
-The settings are stored in HVSMMSET.DAT.  There are no options for them in
+The settings are stored in GALMMSET.DAT.  There are no options for them in
 the configuration editor.
 
 
@@ -197,13 +206,13 @@ destination page's "Key for /GO", or users can reach it with /GO anyway.
 8. FILES
 --------
 
-  HVSMM.DLL      the module
-  HVSMM.MDF      module description
-  HVSMM.MSG      all text, editable in the configuration editor.  Changing
-                 values appear as named text variables such as HVSMM_PAGE,
+  GALMM.DLL      the module
+  GALMM.MDF      module description
+  GALMM.MSG      all text, editable in the configuration editor.  Changing
+                 values appear as named text variables such as GALMM_PAGE,
                  so you can reword messages freely.
-  HVSMM.RLN      this manual
-  HVSMMSET.DAT   settings (created on first start)
+  GALMM.RLN      this manual
+  GALMMSET.DAT   settings (created on first start)
 
 Menu Magician edits the BBS's own menu file, WGSMENU2.DAT.  Back it up
 before large changes.
@@ -212,6 +221,8 @@ before large changes.
 9. VERSION HISTORY
 ------------------
 
+  1.4.1  Files renamed from HVSMM to GALMM (GALMM.DLL, GALMM.MSG,
+         GALMMSET.DAT, GALMM_* text variables).  No other changes.
   1.4.0  First release for The Major BBS v10.  No activation code.  The
          settings moved from the configuration editor to the online !SETUP
          screen.  Text uses named text variables.  Terminal mode only.

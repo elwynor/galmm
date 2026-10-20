@@ -1,6 +1,6 @@
-/* Build 26.10.19.1 01:00PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
- *   HVSMM.C   v1.4.0                     Menu Magician for The Major BBS v10 *
+ *   GALMM.C   v1.4.1                     Menu Magician for The Major BBS v10 *
  *                                                                           *
  *   Copyright (C) 2026 Elwynor Technologies.                                *
  *   Originally (C) Copyright 1993-1996 High Velocity Software, Inc.         *
@@ -15,14 +15,14 @@
  *   calls to the editor's session runner.                                   *
  *                                                                           *
  *   Source map:                                                             *
- *     HVSMM.C     this file - startup, shutdown, BBS entry points           *
+ *     GALMM.C     this file - startup, shutdown, BBS entry points           *
  *     MMFIBER.C   sessions: runs the editor on a fiber per user             *
  *     MMEDIT.C    the editor: entry prompt, page and selection editing      *
  *     MMVIEW.C    tree view, search, installed-module list                  *
- *     MMSET.C     live settings (HVSMMSET.DAT) and the !SETUP screen        *
- *     MMTVARS.C   named text variables used in HVSMM.MSG                    *
- *     HVSMMDEF.H  shared declarations                                       *
- *     HVSMM.H     message numbers (generated from HVSMM.MST)                *
+ *     MMSET.C     live settings (GALMMSET.DAT) and the !SETUP screen        *
+ *     MMTVARS.C   named text variables used in GALMM.MSG                    *
+ *     GALMMDEF.H  shared declarations                                       *
+ *     GALMM.H     message numbers (generated from GALMM.MST)                *
  *                                                                           *
  *   Licensed under the GNU Affero General Public License v3.0 - see the     *
  *   LICENSE file in the project root.                                       *
@@ -30,7 +30,7 @@
 
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 static GBOOL mminput(VOID);
 static VOID  mmstatus(VOID);
@@ -38,8 +38,8 @@ static VOID  mmhangup(VOID);
 static GBOOL mmlogon(VOID);
 static VOID  mmshutdown(VOID);
 
-static struct module hvsmm = {       /* our entry in the BBS module table    */
-     "",                             /*   name (filled from HVSMM.MDF)       */
+static struct module galmm = {       /* our entry in the BBS module table    */
+     "",                             /*   name (filled from GALMM.MDF)       */
      mmlogon,                        /*   logon: clear a stale session       */
      mminput,                        /*   a line of input while in module    */
      mmstatus,                       /*   status input (CYCLE wakes a pause) */
@@ -51,15 +51,15 @@ static struct module hvsmm = {       /* our entry in the BBS module table    */
      mmshutdown                      /*   system shutdown                    */
 };
 
-HMCVFILE mmmb;                       /* HVSMM.MCV, our message file          */
+HMCVFILE mmmb;                       /* GALMM.MCV, our message file          */
 INT mmstt;                           /* our module (state) number            */
 
 VOID EXPORT
-init__hvsmm(VOID)                    /* called once by the BBS at startup    */
+init__galmm(VOID)                    /* called once by the BBS at startup    */
 {
-     stzcpy(hvsmm.descrp, gmdnam("HVSMM.MDF"), MNMSIZ);
-     mmstt = register_module(&hvsmm);
-     mmmb = opnmsg("HVSMM.MCV");
+     stzcpy(galmm.descrp, gmdnam("GALMM.MDF"), MNMSIZ);
+     mmstt = register_module(&galmm);
+     mmmb = opnmsg("GALMM.MCV");
      if (!ses_init()) {
           catastro("MENU MAGICIAN: NO MEMORY FOR SESSIONS");
      }
@@ -70,7 +70,7 @@ init__hvsmm(VOID)                    /* called once by the BBS at startup    */
 
      /* Name the running build in the Audit Trail so a sysop can always    */
      /* tell which version is loaded.                                       */
-     shocst("MENU MAGICIAN v" HVSMM_VERSION,
+     shocst("MENU MAGICIAN v" GALMM_VERSION,
             "(C) Elwynor Technologies; orig. High Velocity Software");
 }
 
@@ -113,6 +113,6 @@ mmshutdown(VOID)                     /* the BBS is shutting down             */
 }
 
 VOID EXPORT
-end_hvsmm(VOID)                      /* marks the end of our code for        */
+end_galmm(VOID)                      /* marks the end of our code for        */
 {                                    /*   exception-dump analysis            */
 }

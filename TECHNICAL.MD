@@ -1,20 +1,20 @@
 # Menu Magician - Technical Notes
 
-How Menu Magician 1.4.0 works inside The Major BBS v10. For building, see
-[BUILDING.MD](BUILDING.MD). For using it, see `SRC/HVSMM/HVSMM.RLN`.
+How Menu Magician 1.4.1 works inside The Major BBS v10. For building, see
+[BUILDING.MD](BUILDING.MD). For using it, see `SRC/GALMM/GALMM.RLN`.
 
 ## Source files
 
 | File | Contents |
 |---|---|
-| `HVSMM.C` | Module registration, the module block, startup and shutdown |
+| `GALMM.C` | Module registration, the module block, startup and shutdown |
 | `MMFIBER.C` | Sessions: runs the editor on a fiber per user |
 | `MMEDIT.C` | The editor: entry prompt, page editor, selection editor, page operations, menu file access |
 | `MMVIEW.C` | Tree view, search, the installed-module list |
 | `MMSET.C` | Settings record and the `!SETUP` screen |
 | `MMTVARS.C` | Named text variables |
-| `HVSMMDEF.H` | Shared declarations, version, settings record layout |
-| `HVSMM.H` | Message numbers (generated from `HVSMM.MST`) |
+| `GALMMDEF.H` | Shared declarations, version, settings record layout |
+| `GALMM.H` | Message numbers (generated from `GALMM.MST`) |
 
 ## Sessions
 
@@ -83,7 +83,7 @@ before every pause and restore it after.
 
 ## Settings
 
-`HVSMMSET.DAT` holds one 256-byte record keyed `SETTINGS` (`struct
+`GALMMSET.DAT` holds one 256-byte record keyed `SETTINGS` (`struct
 mmsetrec`, packing pinned at 8). It is created with `dfaCreateSpec` on the
 first start and seeded from the defaults table in `MMSET.C`. The lookup key
 is copied into the record buffer, because the DFA layer ignores keys in
@@ -104,10 +104,10 @@ calls the current module's input routine for the same line (WG33
 
 ## Text variables
 
-All `HVSMM.MSG` values are named text variables registered in `MMTVARS.C`
-with the `HVSMM_` prefix. The engine expands them before `prfmsg()` runs
+All `GALMM.MSG` values are named text variables registered in `MMTVARS.C`
+with the `GALMM_` prefix. The engine expands them before `prfmsg()` runs
 the text through `vsprintf()`, so every value is returned with `%` doubled.
-`HVSMM_VERSION`, `HVSMM_NEWCMD` and `HVSMM_VIEWCMD` always return the live
+`GALMM_VERSION`, `GALMM_NEWCMD` and `GALMM_VIEWCMD` always return the live
 value. The others are set just before each message.
 
 ## Installed modules

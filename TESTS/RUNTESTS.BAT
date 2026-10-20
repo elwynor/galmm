@@ -1,5 +1,5 @@
 @echo off
-rem Build 26.10.19.1 12:41PM
+rem Build 26.10.20.1 08:07AM
 rem RUNTESTS.BAT - build and run Menu Magician's standalone tests.
 rem Copyright (C) 2026 Elwynor Technologies.  Licensed under the AGPL-3.0.
 rem
@@ -16,8 +16,8 @@ call "%VCVARS%" >nul
 if not exist "%HERE%OUT" mkdir "%HERE%OUT"
 
 rem The session runner (MMFIBER.C) against the stand-in engine headers.
-cl /nologo /W3 /J /TC /D_CRT_SECURE_NO_WARNINGS /I"%HERE%FAKE" /I"%HERE%..\SRC\HVSMM" ^
+cl /nologo /W3 /J /TC /D_CRT_SECURE_NO_WARNINGS /I"%HERE%FAKE" /I"%HERE%..\SRC\GALMM" ^
    /Fo"%HERE%OUT\\" /Fe"%HERE%OUT\SESTEST.EXE" ^
-   "%HERE%SESTEST.C" "%HERE%..\SRC\HVSMM\MMFIBER.C" || exit /b 1
+   "%HERE%SESTEST.C" "%HERE%..\SRC\GALMM\MMFIBER.C" || exit /b 1
 "%HERE%OUT\SESTEST.EXE"
 exit /b %ERRORLEVEL%

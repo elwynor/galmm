@@ -1,6 +1,6 @@
-/* Build 26.10.19.2 01:12PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
- *   HVSMMDEF.H                              Menu Magician - Shared defines   *
+ *   GALMMDEF.H                              Menu Magician - Shared defines   *
  *                                                                           *
  *   Copyright (C) 2026 Elwynor Technologies.                                *
  *   Originally (C) Copyright 1994 High Velocity Software, Inc.              *
@@ -13,29 +13,29 @@
  *   LICENSE file in the project root.                                       *
  *****************************************************************************/
 
-#ifndef HVSMMDEF_H
-#define HVSMMDEF_H
+#ifndef GALMMDEF_H
+#define GALMMDEF_H
 
 #include <stddef.h>
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMM.H"                   /* message numbers for HVSMM.MSG        */
+#include "GALMM.H"                   /* message numbers for GALMM.MSG        */
 
 /* ------------------------------------------------------------------------ *
- * Version.  HVSMM_VERSION is what sysops see (audit trail, help screen);   *
- * the numeric parts feed the DLL's Windows version resource (HVSMM.rc).    *
+ * Version.  GALMM_VERSION is what sysops see (audit trail, help screen);   *
+ * the numeric parts feed the DLL's Windows version resource (GALMM.rc).    *
  * ------------------------------------------------------------------------ */
-#define HVSMM_VER_MAJOR 1
-#define HVSMM_VER_MINOR 4
-#define HVSMM_VER_PATCH 0
-#define HVSMM_VERSION   "1.4.0"
+#define GALMM_VER_MAJOR 1
+#define GALMM_VER_MINOR 4
+#define GALMM_VER_PATCH 1
+#define GALMM_VERSION   "1.4.1"
 
 /* ------------------------------------------------------------------------ *
- * Live settings (MMSET.C).  They are kept in HVSMMSET.DAT and changed      *
+ * Live settings (MMSET.C).  They are kept in GALMMSET.DAT and changed      *
  * online with the !SETUP command; there are no CNF options.  Code reads    *
  * mmcfg at the point of use, never a copy taken at startup.                *
  * ------------------------------------------------------------------------ */
-#define MMS_FILE     "HVSMMSET.DAT"
+#define MMS_FILE     "GALMMSET.DAT"
 #define MMS_RECID    "SETTINGS"      /* key of the one settings record       */
 #define MMS_RECLEN   256             /* fixed record length, room to grow    */
 #define MMS_LAYOUT   1               /* bump when the record layout changes  */
@@ -88,7 +88,7 @@ GBOOL ses_drain(UINT room);          /* wait for output room; TRUE = aborted */
  * The editor (MMEDIT.C) and the menu file helpers.                         *
  * ------------------------------------------------------------------------ */
 extern INT mmstt;                    /* our module (state) number            */
-extern HMCVFILE mmmb;                /* HVSMM.MCV                            */
+extern HMCVFILE mmmb;                /* GALMM.MCV                            */
 extern INT UseChan;                  /* channel using the editor, or -1      */
 extern INT TurboChan;                /* channel entering via the global cmd  */
 extern struct mnupag Work;           /* the page being edited                */
@@ -122,7 +122,7 @@ extern INT nTerminal;                /* modules a page can link to           */
 extern CHAR **ppTerminal;
 
 /* ------------------------------------------------------------------------ *
- * Text variables (MMTVARS.C).  Every changing value in HVSMM.MSG is a      *
+ * Text variables (MMTVARS.C).  Every changing value in GALMM.MSG is a      *
  * named text variable; set the slot just before printing the message.     *
  * ------------------------------------------------------------------------ */
 VOID tv_init(VOID);
@@ -139,4 +139,4 @@ enum {                               /* text variable slots                  */
      MTV_COUNT_OF
 };
 
-#endif /* HVSMMDEF_H */
+#endif /* GALMMDEF_H */

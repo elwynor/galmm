@@ -1,13 +1,13 @@
 # Menu Magician for The Major BBS v10
 
-**Menu Magician** (`HVSMM`) is an online menu tree editor for The Major BBS
+**Menu Magician** (`GALMM`) is an online menu tree editor for The Major BBS
 v10. A sysop can restructure the BBS's menu tree while the board runs: edit
 any page's settings and menu selections, create, rename, retype and delete
 pages, view the whole tree, and search it, all without taking the system
 down.
 
 Menu Magician was originally written by High Velocity Software for
-Worldgroup. Version 1.4.0 is its conversion to The Major BBS v10 by Elwynor
+Worldgroup. Version 1.4.1 is its conversion to The Major BBS v10 by Elwynor
 Technologies.
 
 ## Features
@@ -30,20 +30,26 @@ Technologies.
 - **Online settings.** The edit command, its key and the entry-prompt
   commands are changed online with `!SETUP`. Changes apply immediately and
   are recorded in the Audit Trail.
-- **Fully editable text.** All text is in `HVSMM.MSG`. Changing values use
+- **Fully editable text.** All text is in `GALMM.MSG`. Changing values use
   named text variables, so sysops can reword messages freely.
 - **No activation code.**
 
 ## Installation
 
-1. With the BBS down, copy `HVSMM.DLL`, `HVSMM.MDF`, `HVSMM.MSG` and
-   `HVSMM.RLN` from the release folder into your BBS directory.
+1. With the BBS down, copy `GALMM.DLL`, `GALMM.MDF`, `GALMM.MSG` and
+   `GALMM.RLN` from the release folder into your BBS directory.
 2. Add Menu Magician to your menu with the Menu Tree editor. Protect both
    the menu selection and the module page with the `SYSOP` key or another
    key that only trusted sysops have.
-3. Start the BBS. Menu Magician creates `HVSMMSET.DAT` on the first start.
+3. Start the BBS. Menu Magician creates `GALMMSET.DAT` on the first start.
 
-**Upgrading from 1.03a (Worldgroup):** replace the files above. No
+**Upgrading from 1.03a (Worldgroup) or the 1.4.0 test build:** the files
+were renamed from `HVSMM` to `GALMM` in 1.4.1. Delete the old `HVSMM.DLL`,
+`HVSMM.MDF`, `HVSMM.MSG`, `HVSMM.MCV` and `HVSMM.RLN`, then install the files
+above. A 1.4.0 install keeps its settings if you rename `HVSMMSET.DAT` to
+`GALMMSET.DAT`.
+
+**Upgrading from 1.03a (Worldgroup):** No
 activation code is needed. The module name is now `Menu Magician` (it was
 `Menu Magician/WG`), so relink the module page that runs it: type `EDIT` on
 the menu page above it, jump to the module page and set its module name
@@ -70,14 +76,14 @@ options. `R` in the settings screen restores the defaults.
 
 Enter Menu Magician from the menu, or type `EDIT` at a menu prompt. At the
 "Edit which page?" prompt, type a page name to edit it, or one of `!NEW`,
-`!VIEW`, `!SEARCH`, `!SETUP` or `X`. `HVSMM.RLN`, the sysop manual,
+`!VIEW`, `!SEARCH`, `!SETUP` or `X`. `GALMM.RLN`, the sysop manual,
 describes every command.
 
 Only one person can use Menu Magician at a time.
 
 ## Version Information
 
-Current version: **1.4.0**. See [CHANGELOG.MD](CHANGELOG.MD) for changes and
+Current version: **1.4.1**. See [CHANGELOG.MD](CHANGELOG.MD) for changes and
 [BUILDING.MD](BUILDING.MD) to build from source.
 
 ## License

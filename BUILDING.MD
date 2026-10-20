@@ -22,29 +22,29 @@ SDK folder (trailing backslash required). `MBBSSDK.props` is not committed.
 
 ## Message file
 
-The module's text is in `SRC/HVSMM/HVSMM.MSG`, and `SRC/HVSMM/HVSMM.H`
-holds the matching message numbers. `HVSMM.MSG` contains raw ESC and 0x01
+The module's text is in `SRC/GALMM/GALMM.MSG`, and `SRC/GALMM/GALMM.H`
+holds the matching message numbers. `GALMM.MSG` contains raw ESC and 0x01
 bytes (ANSI color and named text variables) and CP437 line-drawing
 characters, and must keep CRLF line endings, so edit it with an editor that
-preserves all of them. `HVSMM.MST` is the same text with those bytes written
+preserves all of them. `GALMM.MST` is the same text with those bytes written
 as readable `<ESC>`, `<TV:NAME>` and `<CHR:n>` tokens.
 
 Message numbers are assigned in file order, starting from 0, and every
 named entry counts, including the `LEVEL6` marker. If you add, remove or
-reorder an entry, update `HVSMM.H` to match and rebuild the DLL. Deploy the
-DLL and `.MSG` together. The BBS compiles `HVSMM.MCV` from the `.MSG`
+reorder an entry, update `GALMM.H` to match and rebuild the DLL. Deploy the
+DLL and `.MSG` together. The BBS compiles `GALMM.MCV` from the `.MSG`
 itself.
 
 ## Build
 
-In Visual Studio, open `HVSMM.sln`, choose **Release** / **Win32**, and
+In Visual Studio, open `GALMM.sln`, choose **Release** / **Win32**, and
 build. Or from a command prompt:
 
 ```
-MSBuild.exe HVSMM.sln -p:Configuration=Release -p:Platform=Win32
+MSBuild.exe GALMM.sln -p:Configuration=Release -p:Platform=Win32
 ```
 
-The DLL is written to `BUILD/Release/HVSMM.dll`.
+The DLL is written to `BUILD/Release/GALMM.dll`.
 
 ## Tests
 
@@ -55,14 +55,14 @@ not a BBS. Everything else is tested on a running board.
 
 ## Packaging a release
 
-1. Set the new version in `SRC/HVSMM/HVSMMDEF.H` (`HVSMM_VER_*`,
-   `HVSMM_VERSION`) and `SRC/HVSMM/HVSMM.rc`, and update `CHANGELOG.MD` and
-   the version history in `HVSMM.RLN`.
+1. Set the new version in `SRC/GALMM/GALMMDEF.H` (`GALMM_VER_*`,
+   `GALMM_VERSION`) and `SRC/GALMM/GALMM.rc`, and update `CHANGELOG.MD` and
+   the version history in `GALMM.RLN`.
 2. Rebuild the Release configuration, and check that the DLL's version
-   matches `HVSMM_VERSION`.
-3. Copy only the deployable files into `DIST/<version>/`: `HVSMM.DLL`,
-   `HVSMM.MDF`, `HVSMM.MSG` and `HVSMM.RLN`. Zip them as
-   `HVSMM-<version>.zip`.
+   matches `GALMM_VERSION`.
+3. Copy only the deployable files into `DIST/<version>/`: `GALMM.DLL`,
+   `GALMM.MDF`, `GALMM.MSG` and `GALMM.RLN`. Zip them as
+   `GALMM-<version>.zip`.
 
 Never rebuild under a version number that has already been released.
 Bump the version instead.
@@ -70,8 +70,8 @@ Bump the version instead.
 ## Release checklist
 
 - Project builds with no errors or warnings, and `TESTS\RUNTESTS.BAT` passes.
-- Version numbers updated (`HVSMMDEF.H`, `HVSMM.rc`, `CHANGELOG.MD`,
-  `HVSMM.RLN`).
+- Version numbers updated (`GALMMDEF.H`, `GALMM.rc`, `CHANGELOG.MD`,
+  `GALMM.RLN`).
 - `README.MD` updated.
 - `DIST/<version>/` holds only the four deployable files, with CRLF line
   endings in the `.MSG`, `.MDF` and `.RLN`.

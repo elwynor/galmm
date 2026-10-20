@@ -3,7 +3,19 @@
 All notable changes to Menu Magician are documented here. Versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.4.0] - Unreleased
+## [1.4.1] - 2026-10-20
+
+### Changed
+- The files are renamed from `HVSMM` to `GALMM`: `GALMM.DLL`, `GALMM.MDF`,
+  `GALMM.MSG`, `GALMM.RLN`, and `GALMMSET.DAT` for the settings. The text
+  variables are now `GALMM_*` (`GALMM_PAGE`, `GALMM_VALUE` and others), and
+  the DLL entry point is `init__galmm`. The module name stays
+  `Menu Magician`.
+- Upgrading: with the BBS down, delete the old `HVSMM.*` files (DLL, MDF,
+  MSG, MCV, RLN) and install the `GALMM` files. A 1.4.0 test install keeps
+  its settings if `HVSMMSET.DAT` is renamed to `GALMMSET.DAT`.
+
+## [1.4.0] - Not released (test build)
 
 First version for The Major BBS v10, converted from High Velocity Software's
 Worldgroup release 1.03a. The editor's commands, prompts and menu file

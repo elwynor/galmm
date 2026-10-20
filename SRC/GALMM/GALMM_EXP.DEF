@@ -1,0 +1,7 @@
+; Filename: GALMM_EXP.DEF
+LIBRARY GALMM.DLL
+; Menu Magician - Copyright (c) 2026 Elwynor Technologies
+; Export alias for the module entry point (Win32 / x86 build).
+; The BBS calls init__<modname>; the decorated cdecl symbol is _init__galmm.
+EXPORTS
+	_init__galmm=init__galmm	@1

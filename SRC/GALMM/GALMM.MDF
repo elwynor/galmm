@@ -1,4 +1,4 @@
-; HVSMM.MDF - Menu Magician v1.4.0 for The Major BBS v10
+; GALMM.MDF - Menu Magician v1.4.1 for The Major BBS v10
 ; Copyright (c) 2026 Elwynor Technologies
 ; Originally (c) High Velocity Software, Inc.
 
@@ -11,10 +11,10 @@ Replaces:
 
 Install:
 
-Online user manual: HVSMM.RLN
+Online user manual: GALMM.RLN
 
-DLLs: HVSMM
-MSGs: HVSMM
+DLLs: GALMM
+MSGs: GALMM
 
 Btrieve page size: 1024
 Btrieve files:     1

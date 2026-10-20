@@ -1,4 +1,4 @@
-/*  Message-number definitions derived from "HVSMM.MSG"  */
+/*  Message-number definitions derived from "GALMM.MSG"  */
 
 #define INUSE       1
 #define BIGHELP     2

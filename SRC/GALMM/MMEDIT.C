@@ -1,4 +1,4 @@
-/* Build 26.10.19.2 01:12PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   MMEDIT.C                                 Menu Magician - The editor      *
  *                                                                           *
@@ -31,7 +31,7 @@
 #include <time.h>
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 INT UseChan = -1;                    /* channel using the editor (one at a   */
                                      /*   time), or -1                       */
@@ -122,7 +122,7 @@ const CHAR *pName)                   /*   destination page name              */
 
 static GBOOL
 ValidateAAPage(                      /* is this a usable new page name?      */
-const CHAR *pProposed)               /*   (sets HVSMM_REASON if not)         */
+const CHAR *pProposed)               /*   (sets GALMM_REASON if not)         */
 {
      INT Length = 0;
 

@@ -16,9 +16,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{5C2E7B41-9D3A-4F6E-8B12-7A4D0E9C3F21}</ProjectGuid>
-    <RootNamespace>HVSMM</RootNamespace>
+    <RootNamespace>GALMM</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>HVSMM</ProjectName>
+    <ProjectName>GALMM</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -75,7 +75,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(MbbsSdkDir)lib\importlibs;$(MbbsSdkDir)lib\v10</AdditionalLibraryDirectories>
       <AdditionalDependencies>wgserver_lib.lib;galgsbl_lib.lib</AdditionalDependencies>
-      <ModuleDefinitionFile>HVSMM_EXP.DEF</ModuleDefinitionFile>
+      <ModuleDefinitionFile>GALMM_EXP.DEF</ModuleDefinitionFile>
       <!-- Store only the PDB file name in the DLL, not a local build path. -->
       <AdditionalOptions>/PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
       <OptimizeReferences>false</OptimizeReferences>
@@ -101,17 +101,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(MbbsSdkDir)lib\importlibs;$(MbbsSdkDir)lib\v10</AdditionalLibraryDirectories>
       <AdditionalDependencies>wgserver_lib.lib;galgsbl_lib.lib</AdditionalDependencies>
-      <ModuleDefinitionFile>HVSMM_EXP.DEF</ModuleDefinitionFile>
+      <ModuleDefinitionFile>GALMM_EXP.DEF</ModuleDefinitionFile>
       <!-- Store only the PDB file name in the DLL, not a local build path. -->
       <AdditionalOptions>/PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="HVSMMDEF.H" />
-    <ClInclude Include="HVSMM.H" />
+    <ClInclude Include="GALMMDEF.H" />
+    <ClInclude Include="GALMM.H" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HVSMM.C" />
+    <ClCompile Include="GALMM.C" />
     <ClCompile Include="MMFIBER.C" />
     <ClCompile Include="MMEDIT.C" />
     <ClCompile Include="MMVIEW.C" />
@@ -119,14 +119,14 @@
     <ClCompile Include="MMTVARS.C" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="HVSMM.rc" />
+    <ResourceCompile Include="GALMM.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="HVSMM.MST" />
-    <None Include="HVSMM.MSG" />
-    <None Include="HVSMM.MDF" />
-    <None Include="HVSMM.RLN" />
-    <None Include="HVSMM_EXP.DEF" />
+    <None Include="GALMM.MST" />
+    <None Include="GALMM.MSG" />
+    <None Include="GALMM.MDF" />
+    <None Include="GALMM.RLN" />
+    <None Include="GALMM_EXP.DEF" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-/* Build 26.10.19.1 12:41PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   TESTS/SESTEST.C                     Menu Magician - session runner test  *
  *                                                                           *
@@ -31,7 +31,7 @@
 #include <stdlib.h>
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 /* ---- The stand-in engine ------------------------------------------------ */
 

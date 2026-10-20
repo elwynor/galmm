@@ -6,7 +6,7 @@
   the location of The Major BBS v10 Module SDK on your machine. The trailing
   backslash is required.
 
-  The HVSMM project imports MBBSSDK.props to locate the SDK headers and
+  The GALMM project imports MBBSSDK.props to locate the SDK headers and
   import libraries, so the committed project file never contains a local path.
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">

@@ -1,4 +1,4 @@
-/* Build 26.10.19.2 01:12PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   MMSET.C                                  Menu Magician - Live settings   *
  *                                                                           *
@@ -6,12 +6,12 @@
  *                                                                           *
  *   Menu Magician's own settings - the global edit command, the key it     *
  *   needs, and the create-orphan and view-tree commands - live in one       *
- *   record in HVSMMSET.DAT.  Up to 1.03a they were CNF options; now a sysop *
+ *   record in GALMMSET.DAT.  Up to 1.03a they were CNF options; now a sysop *
  *   changes them online with !SETUP and every change applies at once.      *
  *   A new install starts from the defaults in the table below, which are   *
  *   also what "Reset all" restores.                                         *
  *                                                                           *
- *   Adding a setting: a field at the END of struct mmsetdat (HVSMMDEF.H),   *
+ *   Adding a setting: a field at the END of struct mmsetdat (GALMMDEF.H),   *
  *   taken from the spare space, and a row in setdefs.  An existing record  *
  *   reads the new field as zero, so bump MMS_LAYOUT and default the field  *
  *   in set_open() when zero is not a good value.                            *
@@ -23,10 +23,10 @@
 #include <ctype.h>
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 struct mmsetdat mmcfg;               /* the live settings                    */
-static DFAFILE *mmsdat;              /* HVSMMSET.DAT                         */
+static DFAFILE *mmsdat;              /* GALMMSET.DAT                         */
 
 enum { T_KEY, T_CMD };               /* setting types                        */
 
@@ -60,7 +60,7 @@ setptr(INT idx)                      /* where setting idx is stored          */
  * ------------------------------------------------------------------------ */
 
 static VOID
-set_save(VOID)                       /* write mmcfg to HVSMMSET.DAT          */
+set_save(VOID)                       /* write mmcfg to GALMMSET.DAT          */
 {
      struct mmsetrec rec;
      GBOOL ok;

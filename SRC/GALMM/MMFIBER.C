@@ -1,4 +1,4 @@
-/* Build 26.10.19.3 01:18PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   MMFIBER.C                               Menu Magician - User sessions    *
  *                                                                           *
@@ -32,7 +32,7 @@
 #include "gcomm.h"
 #include "majorbbs.h"
 #include <windows.h>
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 #define SES_COMMIT   (64 * 1024)     /* fiber stack committed up front       */
 #define SES_RESERVE  (1024 * 1024)   /* fiber stack it may grow to           */

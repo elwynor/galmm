@@ -1,10 +1,10 @@
-/* Build 26.10.19.2 01:12PM */
+/* Build 26.10.20.1 08:06AM */
 /*****************************************************************************
  *   MMTVARS.C                             Menu Magician - Text variables     *
  *                                                                           *
  *   Copyright (C) 2026 Elwynor Technologies.                                *
  *                                                                           *
- *   Every changing value in HVSMM.MSG (a page name, a module name, a        *
+ *   Every changing value in GALMM.MSG (a page name, a module name, a        *
  *   Yes/No) is a named text variable - the byte sequence                    *
  *   0x01 <justify> <width+32> NAME 0x01 - rather than a printf-style %s.    *
  *   That lets sysops reword, reorder or drop values when they edit the      *
@@ -17,7 +17,7 @@
  *   title a sysop typed, say) would be read as a format code and could      *
  *   crash the board.  So values are returned with every '%' doubled.        *
  *                                                                           *
- *   Names are global to the whole BBS, so all of ours start with HVSMM_.    *
+ *   Names are global to the whole BBS, so all of ours start with GALMM_.    *
  *                                                                           *
  *   Licensed under the GNU Affero General Public License v3.0.              *
  *****************************************************************************/
@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include "gcomm.h"
 #include "majorbbs.h"
-#include "HVSMMDEF.H"
+#include "GALMMDEF.H"
 
 #define TVBSIZ 80                    /* room for any value we show           */
 
@@ -83,43 +83,43 @@ static CHAR *tvLABEL(VOID)    { return tvget(MTV_LABEL);    }
 static CHAR *tvLIMIT(VOID)    { return tvget(MTV_LIMIT);    }
 
 /* These always show the live value, so they never need setting.            */
-static CHAR *tvVERSION(VOID)  { return HVSMM_VERSION;            }
+static CHAR *tvVERSION(VOID)  { return GALMM_VERSION;            }
 static CHAR *tvNEWCMD(VOID)   { return tvesc(mmcfg.orphcmd);     }
 static CHAR *tvVIEWCMD(VOID)  { return tvesc(mmcfg.viewcmd);     }
 
 VOID
 tv_init(VOID)                        /* register all of our text variables   */
 {
-     register_textvar("HVSMM_PAGE",     tvPAGE);
-     register_textvar("HVSMM_PARENT",   tvPARENT);
-     register_textvar("HVSMM_DISABLED", tvDISABLED);
-     register_textvar("HVSMM_GOTO",     tvGOTO);
-     register_textvar("HVSMM_GOKEY",    tvGOKEY);
-     register_textvar("HVSMM_MODULE",   tvMODULE);
-     register_textvar("HVSMM_COMMAND",  tvCOMMAND);
-     register_textvar("HVSMM_HEADER",   tvHEADER);
-     register_textvar("HVSMM_FILE",     tvFILE);
-     register_textvar("HVSMM_AUTO",     tvAUTO);
-     register_textvar("HVSMM_DEFDISP",  tvDEFDISP);
-     register_textvar("HVSMM_TITLE",    tvTITLE);
-     register_textvar("HVSMM_NUM",      tvNUM);
-     register_textvar("HVSMM_SEL",      tvSEL);
-     register_textvar("HVSMM_TEXT",     tvTEXT);
-     register_textvar("HVSMM_NUM2",     tvNUM2);
-     register_textvar("HVSMM_SEL2",     tvSEL2);
-     register_textvar("HVSMM_TEXT2",    tvTEXT2);
-     register_textvar("HVSMM_VALUE",    tvVALUE);
-     register_textvar("HVSMM_SHORT",    tvSHORT);
-     register_textvar("HVSMM_KEY",      tvKEY);
-     register_textvar("HVSMM_DISPLAY",  tvDISPLAY);
-     register_textvar("HVSMM_DEST",     tvDEST);
-     register_textvar("HVSMM_ACTION",   tvACTION);
-     register_textvar("HVSMM_REASON",   tvREASON);
-     register_textvar("HVSMM_LABEL",    tvLABEL);
-     register_textvar("HVSMM_LIMIT",    tvLIMIT);
-     register_textvar("HVSMM_VERSION",  tvVERSION);
-     register_textvar("HVSMM_NEWCMD",   tvNEWCMD);
-     register_textvar("HVSMM_VIEWCMD",  tvVIEWCMD);
+     register_textvar("GALMM_PAGE",     tvPAGE);
+     register_textvar("GALMM_PARENT",   tvPARENT);
+     register_textvar("GALMM_DISABLED", tvDISABLED);
+     register_textvar("GALMM_GOTO",     tvGOTO);
+     register_textvar("GALMM_GOKEY",    tvGOKEY);
+     register_textvar("GALMM_MODULE",   tvMODULE);
+     register_textvar("GALMM_COMMAND",  tvCOMMAND);
+     register_textvar("GALMM_HEADER",   tvHEADER);
+     register_textvar("GALMM_FILE",     tvFILE);
+     register_textvar("GALMM_AUTO",     tvAUTO);
+     register_textvar("GALMM_DEFDISP",  tvDEFDISP);
+     register_textvar("GALMM_TITLE",    tvTITLE);
+     register_textvar("GALMM_NUM",      tvNUM);
+     register_textvar("GALMM_SEL",      tvSEL);
+     register_textvar("GALMM_TEXT",     tvTEXT);
+     register_textvar("GALMM_NUM2",     tvNUM2);
+     register_textvar("GALMM_SEL2",     tvSEL2);
+     register_textvar("GALMM_TEXT2",    tvTEXT2);
+     register_textvar("GALMM_VALUE",    tvVALUE);
+     register_textvar("GALMM_SHORT",    tvSHORT);
+     register_textvar("GALMM_KEY",      tvKEY);
+     register_textvar("GALMM_DISPLAY",  tvDISPLAY);
+     register_textvar("GALMM_DEST",     tvDEST);
+     register_textvar("GALMM_ACTION",   tvACTION);
+     register_textvar("GALMM_REASON",   tvREASON);
+     register_textvar("GALMM_LABEL",    tvLABEL);
+     register_textvar("GALMM_LIMIT",    tvLIMIT);
+     register_textvar("GALMM_VERSION",  tvVERSION);
+     register_textvar("GALMM_NEWCMD",   tvNEWCMD);
+     register_textvar("GALMM_VIEWCMD",  tvVIEWCMD);
 }
 
 VOID

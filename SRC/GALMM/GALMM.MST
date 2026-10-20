@@ -7,9 +7,9 @@ again in a few minutes.
 } T Magician is in use
 
 BIGHELP {<ESC>[1;35m
-...Help for Menu Magician <ESC>[37m<TV:HVSMM_VERSION><ESC>[35m:
+...Help for Menu Magician <ESC>[37m<TV:GALMM_VERSION><ESC>[35m:
 <ESC>[1;36m
-You are currently editing the <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m page in your menu tree.  To make
+You are currently editing the <ESC>[37m<TV:GALMM_PAGE><ESC>[36m page in your menu tree.  To make
 a change to this page, simply choose the letter corresponding with the
 field you wish to edit.  Any changes you make will be immediately
 visible on your menu tree when you (S)ave the page.
@@ -32,33 +32,33 @@ BIGMENU {<ESC>[1;35m
 } T Big menu!
 
 COMMON {<ESC>[1;35m
-...Working with page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m   (Parent page: <ESC>[37m<TV:HVSMM_PARENT><ESC>[36m)
+...Working with page: <ESC>[37m<TV:GALMM_PAGE><ESC>[36m   (Parent page: <ESC>[37m<TV:GALMM_PARENT><ESC>[36m)
 
-  <ESC>[36m(D) <ESC>[32mDisabled <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_DISABLED:L:3>          <ESC>[36m(G) <ESC>[32mAllow /GO <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_GOTO:R:3>
-  <ESC>[36m(K) <ESC>[32mKey for /GO <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_GOKEY>
+  <ESC>[36m(D) <ESC>[32mDisabled <ESC>[0m......... <ESC>[1;37m<TV:GALMM_DISABLED:L:3>          <ESC>[36m(G) <ESC>[32mAllow /GO <ESC>[0m......... <ESC>[1;37m<TV:GALMM_GOTO:R:3>
+  <ESC>[36m(K) <ESC>[32mKey for /GO <ESC>[0m...... <ESC>[1;37m<TV:GALMM_GOKEY>
 } T Common stuff
 
 MODULE {<ESC>[1;35m
 ...Module page options:
 
-  <ESC>[36m(M) <ESC>[32mModule name <ESC>[0m.......... <ESC>[1;37m<TV:HVSMM_MODULE>
-  <ESC>[36m(C) <ESC>[32mCommand string <ESC>[0m....... <ESC>[1;37m<TV:HVSMM_COMMAND>
-  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_HEADER>
+  <ESC>[36m(M) <ESC>[32mModule name <ESC>[0m.......... <ESC>[1;37m<TV:GALMM_MODULE>
+  <ESC>[36m(C) <ESC>[32mCommand string <ESC>[0m....... <ESC>[1;37m<TV:GALMM_COMMAND>
+  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:GALMM_HEADER>
 } T Module page info
 
 FILEP {<ESC>[1;35m
 ...File page options:
 
-  <ESC>[36m(F) <ESC>[32mDisplay file <ESC>[0m......... <ESC>[1;37m<TV:HVSMM_FILE><ESC>[36m
-  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_HEADER>
+  <ESC>[36m(F) <ESC>[32mDisplay file <ESC>[0m......... <ESC>[1;37m<TV:GALMM_FILE><ESC>[36m
+  <ESC>[36m(H) <ESC>[32mDisplay page header <ESC>[0m.. <ESC>[1;37m<TV:GALMM_HEADER>
 } T File page info
 
 MENU {<ESC>[1;35m
 ...Menu page options:
 
-  <ESC>[1;36m(A) <ESC>[32mAuto-select <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_AUTO:L:3>          <ESC>[36m(N) <ESC>[32mDefault display <ESC>[0m... <ESC>[1;37m<TV:HVSMM_DEFDISP>
-  <ESC>[1;36m(F) <ESC>[32mDisplay file(s) <ESC>[0m.. <ESC>[1;37m<TV:HVSMM_FILE:L:12>
-  <ESC>[1;36m(L) <ESC>[32mShort title <ESC>[0m...... <ESC>[1;37m<TV:HVSMM_TITLE>
+  <ESC>[1;36m(A) <ESC>[32mAuto-select <ESC>[0m...... <ESC>[1;37m<TV:GALMM_AUTO:L:3>          <ESC>[36m(N) <ESC>[32mDefault display <ESC>[0m... <ESC>[1;37m<TV:GALMM_DEFDISP>
+  <ESC>[1;36m(F) <ESC>[32mDisplay file(s) <ESC>[0m.. <ESC>[1;37m<TV:GALMM_FILE:L:12>
+  <ESC>[1;36m(L) <ESC>[32mShort title <ESC>[0m...... <ESC>[1;37m<TV:GALMM_TITLE>
 
   <ESC>[1;36m(C) <ESC>[32mDisplay child pages             <ESC>[1;36m(M) <ESC>[32mDisplay menu selections
 } T Menu page info
@@ -73,24 +73,24 @@ MENUPHDR {
 -- --- ------------------------------- -- --- --------------------<ESC>[1;37m
 } T Menu page info header
 
-MENULIN {<ESC>[32m<TV:HVSMM_NUM:R:2><ESC>[37m  <TV:HVSMM_SEL>  <TV:HVSMM_TEXT:L:31> <ESC>[32m<TV:HVSMM_NUM2:R:2><ESC>[37m  <TV:HVSMM_SEL2>  <TV:HVSMM_TEXT2:L:31>
+MENULIN {<ESC>[32m<TV:GALMM_NUM:R:2><ESC>[37m  <TV:GALMM_SEL>  <TV:GALMM_TEXT:L:31> <ESC>[32m<TV:GALMM_NUM2:R:2><ESC>[37m  <TV:GALMM_SEL2>  <TV:GALMM_TEXT2:L:31>
 } T Menu line
 
-MENUEND {<ESC>[32m<TV:HVSMM_NUM:R:2><ESC>[37m  <TV:HVSMM_SEL>  <TV:HVSMM_TEXT:L:31>
+MENUEND {<ESC>[32m<TV:GALMM_NUM:R:2><ESC>[37m  <TV:GALMM_SEL>  <TV:GALMM_TEXT:L:31>
 <ESC>[1;35m
 To edit a menu selection, simply enter its number at the prompt.
 } T Last menu line
 
 PROMPT {<ESC>[1;36m
-Page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m
+Page: <ESC>[37m<TV:GALMM_PAGE><ESC>[36m
 Menu command? (<ESC>[37m?=Help<ESC>[36m): } T Menu prompt
 
 BIGENTER {<ESC>[1;35m
 ...Menu Magician.<ESC>[36m
 
 To edit a page, enter the name of the page at the prompt.  If you wish
-to create a new orphan page, enter "<ESC>[37m<TV:HVSMM_NEWCMD><ESC>[36m".  You can get a display of
-the menu tree by entering "<ESC>[37m<TV:HVSMM_VIEWCMD><ESC>[36m".  To search the menu tree for a particular
+to create a new orphan page, enter "<ESC>[37m<TV:GALMM_NEWCMD><ESC>[36m".  You can get a display of
+the menu tree by entering "<ESC>[37m<TV:GALMM_VIEWCMD><ESC>[36m".  To search the menu tree for a particular
 string, enter "<ESC>[37m!SEARCH<ESC>[36m".
 Sysops can change Menu Magician's settings with "<ESC>[37m!SETUP<ESC>[36m".
 } T Big entry
@@ -104,12 +104,12 @@ To enter Menu Magician, you need to select a page you wish to edit.
 This page can be any valid page in your menuing system, such as "TOP".
 Simply enter the name of the page and it will appear for editing.
 
-If you wish to create a new orphan page, you can enter "<ESC>[37m<TV:HVSMM_NEWCMD><ESC>[36m" at the
+If you wish to create a new orphan page, you can enter "<ESC>[37m<TV:GALMM_NEWCMD><ESC>[36m" at the
 next prompt.  After you choose a name for the new page, you will be
 placed into the editor to edit it.
 
 Alternately, you can view a graphic display of your menu tree by
-entering "<ESC>[37m<TV:HVSMM_VIEWCMD><ESC>[36m" at the next prompt.  This display is exactly like the
+entering "<ESC>[37m<TV:GALMM_VIEWCMD><ESC>[36m" at the next prompt.  This display is exactly like the
 off-line display, with each page in a different color corresponding to
 its type.
 
@@ -131,16 +131,16 @@ NOGOTO {<ESC>[1;35m...There is no page by that name.
 NOPAGE {<ESC>[1;35m...There is no page by that name.  For help, enter "<ESC>[37m?<ESC>[35m".
 } T No such page (entry)
 
-SAVED {<ESC>[1;32m...<ESC>[37m<TV:HVSMM_PAGE><ESC>[32m: Page saved.
+SAVED {<ESC>[1;32m...<ESC>[37m<TV:GALMM_PAGE><ESC>[32m: Page saved.
 } T Saved ok
 
-DISTOG {<ESC>[1;32m...This page is <TV:HVSMM_VALUE> disabled.
+DISTOG {<ESC>[1;32m...This page is <TV:GALMM_VALUE> disabled.
 } T Disable toggle
 
-ALGOTOG {<ESC>[1;32m...Global /GO to this page is <TV:HVSMM_VALUE> disabled.
+ALGOTOG {<ESC>[1;32m...Global /GO to this page is <TV:GALMM_VALUE> disabled.
 } T Toggle global go
 
-GOSET {<ESC>[1;32m...Key required for /GO is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+GOSET {<ESC>[1;32m...Key required for /GO is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T /GO key set ok
 
 KEYPROM {<ESC>[1;36m
@@ -151,31 +151,31 @@ Which module name or number? (<ESC>[37m?=List, <CR>=Abort<ESC>[36m): } T Set mod
 
 NOMOD {<ESC>[1;35m...No such module is present.  Set anyway? (y/N): } T No module here
 
-SETMOD {<ESC>[1;32m...Module link is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+SETMOD {<ESC>[1;32m...Module link is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Module info is set
 
 CMDSTG {<ESC>[1;36m
 Command string for this module? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Set command string prompt
 
-CMDSET {<ESC>[1;32m...Command string is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CMDSET {<ESC>[1;32m...Command string is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Command string is set
 
 MPHPROM {<ESC>[1;36m
 Display module page header prior to entry? (<ESC>[37mY=Yes, N=No, <CR>=Abort<ESC>[36m): } T Set module page header
 
-MPHSET {<ESC>[1;32m...Module page header is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+MPHSET {<ESC>[1;32m...Module page header is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Module page header set
 
 FILPROM {<ESC>[1;36m
 Which file does this page display? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Set file page
 
-FILSET {<ESC>[1;32m...File for this page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+FILSET {<ESC>[1;32m...File for this page is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T File set
 
 FPHPROM {<ESC>[1;36m
 Display file page header prior to file output? (<ESC>[37mY=Yes, N=No, <CR>=Abort<ESC>[36m): } T Set file page header
 
-FPHSET {<ESC>[1;32m...File page header is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+FPHSET {<ESC>[1;32m...File page header is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T File page header set
 
 NOTTOP {<ESC>[1;35m...Sorry, that option is not available for the "TOP" page.
@@ -183,7 +183,7 @@ NOTTOP {<ESC>[1;35m...Sorry, that option is not available for the "TOP" page.
 
 NOTSAVED {<ESC>[1;36m...Page has been edited but not saved.  Save it? (y/n): } T Check for save
 
-AUTSET {<ESC>[1;32m...Auto-select for this menu page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+AUTSET {<ESC>[1;32m...Auto-select for this menu page is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Auto-select set
 
 MFILPROM {<ESC>[1;36m
@@ -192,10 +192,10 @@ What is the base name for this menu's files? (<ESC>[37m<CR>=Abort<ESC>[36m): } T
 MTTLPROM {<ESC>[1;36m
 What is the short title? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Title prompt
 
-TTLSET {<ESC>[1;32m...Short title for this page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+TTLSET {<ESC>[1;32m...Short title for this page is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Title set
 
-DFTSET {<ESC>[1;32m...Default display for this menu page is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+DFTSET {<ESC>[1;32m...Default display for this menu page is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Default display set
 
 CHOHELP {<ESC>[1;35m...Editing menu selection help.<ESC>[36m
@@ -209,26 +209,26 @@ To re-display this selection, hit <ESC>[37mEnter<ESC>[36m.
 } T Choice help
 
 EDTCHO {<ESC>[1;35m
-...Currently editing menu selection #<TV:HVSMM_NUM> on the <ESC>[37m<TV:HVSMM_PAGE><ESC>[35m page:<ESC>[36m
+...Currently editing menu selection #<TV:GALMM_NUM> on the <ESC>[37m<TV:GALMM_PAGE><ESC>[35m page:<ESC>[36m
 
-  (C) <ESC>[32mSelection character <ESC>[0;36m......... <ESC>[1;37m<TV:HVSMM_SEL><ESC>[36m
-  (H) <ESC>[32mShort description <ESC>[0;36m........... <ESC>[1;37m<TV:HVSMM_SHORT><ESC>[36m
-  (A) <ESC>[32mKey required to access <ESC>[0;36m...... <ESC>[1;37m<TV:HVSMM_KEY><ESC>[36m
-  (D) <ESC>[32mDisplay if no access <ESC>[0;36m........ <ESC>[1;37m<TV:HVSMM_DISPLAY><ESC>[36m
-  (P) <ESC>[32mDestination page <ESC>[0;36m............ <ESC>[1;37m<TV:HVSMM_DEST><ESC>[36m
+  (C) <ESC>[32mSelection character <ESC>[0;36m......... <ESC>[1;37m<TV:GALMM_SEL><ESC>[36m
+  (H) <ESC>[32mShort description <ESC>[0;36m........... <ESC>[1;37m<TV:GALMM_SHORT><ESC>[36m
+  (A) <ESC>[32mKey required to access <ESC>[0;36m...... <ESC>[1;37m<TV:GALMM_KEY><ESC>[36m
+  (D) <ESC>[32mDisplay if no access <ESC>[0;36m........ <ESC>[1;37m<TV:GALMM_DISPLAY><ESC>[36m
+  (P) <ESC>[32mDestination page <ESC>[0;36m............ <ESC>[1;37m<TV:GALMM_DEST><ESC>[36m
   (W) <ESC>[32mSwap this selection with another
 } T Menu choice
 
 CHOPROM {<ESC>[1;36m
-Selection #<TV:HVSMM_NUM> on page: <ESC>[37m<TV:HVSMM_PAGE><ESC>[36m
+Selection #<TV:GALMM_NUM> on page: <ESC>[37m<TV:GALMM_PAGE><ESC>[36m
 Menu selection command? (<ESC>[37m?=Help<ESC>[36m): } T Menu prompt
 
 SELPROM {<ESC>[1;36m
-Selection characters in use: <ESC>[37m<TV:HVSMM_VALUE><ESC>[36m
+Selection characters in use: <ESC>[37m<TV:GALMM_VALUE><ESC>[36m
 
 New selection character? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Selection char prompt
 
-SELSET {<ESC>[1;32m...New selection character: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+SELSET {<ESC>[1;32m...New selection character: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Selection set
 
 ALRSEL {<ESC>[1;35m...Another option on this page already uses that selection character.
@@ -237,19 +237,19 @@ ALRSEL {<ESC>[1;35m...Another option on this page already uses that selection ch
 CKEYPROM {<ESC>[1;36m
 New key to use this option? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T Selection key prompt
 
-CKEYSET {<ESC>[1;32m...New key required for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CKEYSET {<ESC>[1;32m...New key required for this option: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Set choice key
 
 CDISPROM {<ESC>[1;36m
 Display option? (<ESC>[37m<CR>=Abort,D=Dim,H=Hide,S=Show<ESC>[36m): } T Display prompt
 
-CDISSET {<ESC>[1;32m...New display mode for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CDISSET {<ESC>[1;32m...New display mode for this option: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Display set
 
 CPAGPROM {<ESC>[1;36m
 New destination page? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Dest page prompt
 
-CPAGSET {<ESC>[1;32m...New destination page for this option: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CPAGSET {<ESC>[1;32m...New destination page for this option: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Page has been set
 
 CPAGALR {
@@ -261,17 +261,17 @@ original destination page will become an orphan page.  To abort this
 operation, press <Return> at the next prompt.
 } T Page already exists warning
 
-CORPHED {<ESC>[1;31m...Moving original page, <ESC>[37m<TV:HVSMM_VALUE><ESC>[31m, to top of menu (orphan page).
+CORPHED {<ESC>[1;31m...Moving original page, <ESC>[37m<TV:GALMM_VALUE><ESC>[31m, to top of menu (orphan page).
 } T Created orphan page
 
-CMAKED {<ESC>[1;32m...Created new page: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CMAKED {<ESC>[1;32m...Created new page: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Made a new page
 
 CPAGTYP {<ESC>[1;36m
 What type of page is the destination? (<ESC>[37mM=Menu, L=Module, F=File, X=Abort<ESC>[36m): } T Get page type of new one
 
 CPAGNORP {<ESC>[1;35m
-The <ESC>[37m<TV:HVSMM_VALUE><ESC>[35m page already exists as a child page!<ESC>[36m
+The <ESC>[37m<TV:GALMM_VALUE><ESC>[35m page already exists as a child page!<ESC>[36m
 
 If you wish to copy the page and all of its children, please use the
 off-line Design Menu Tree utility.  Otherwise, use a unique page name
@@ -291,7 +291,7 @@ this selection.
 CSHOPROM {<ESC>[1;36m
 New short description? (<ESC>[37m<CR>=Abort, X=Clear<ESC>[36m): } T New short desc prompt
 
-CSHOSET {<ESC>[1;32m...Set short description: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+CSHOSET {<ESC>[1;32m...Set short description: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Short description set
 
 NOCWARN {<ESC>[1;35m
@@ -329,7 +329,7 @@ including all menu selections.<ESC>[36m
 
 What type of page is this now? (<ESC>[37mM=Menu, L=Module, F=File, <CR>=Abort<ESC>[37m): } T Set new page type
 
-TYPSET {<ESC>[1;32m...New page type is: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+TYPSET {<ESC>[1;32m...New page type is: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T New type set
 
 BADIDEA {<ESC>[1;35m
@@ -353,13 +353,13 @@ orphans.<ESC>[36m
 Are you sure you want to proceed? (<ESC>[37mY=Yes<ESC>[36m): } T Continue with big delete
 
 DELING {<ESC>[1;32m
-...Deleting page: <ESC>[37m<TV:HVSMM_VALUE>
+...Deleting page: <ESC>[37m<TV:GALMM_VALUE>
 } T Deleting a page
 
-MOVING {<ESC>[1;32m...Orphaning page: <ESC>[37m<TV:HVSMM_VALUE>
+MOVING {<ESC>[1;32m...Orphaning page: <ESC>[37m<TV:GALMM_VALUE>
 } T Orphaning a page
 
-ADJING {<ESC>[1;32m...Connecting child page: <ESC>[37m<TV:HVSMM_VALUE>
+ADJING {<ESC>[1;32m...Connecting child page: <ESC>[37m<TV:GALMM_VALUE>
 } T Adjusting parent field of child page
 
 DELEND {} T End of deletion
@@ -403,13 +403,13 @@ MENIN {<ESC>[37m} T Menu in
 
 PEGBAR {<ESC>[37m<CHR:179>} T Carried menu bar
 
-KIDS {<TV:HVSMM_PAGE><ESC>[37m<CHR:196><CHR:191>
+KIDS {<TV:GALMM_PAGE><ESC>[37m<CHR:196><CHR:191>
 } T This page has kids
 
-NOKIDS {<TV:HVSMM_PAGE>
+NOKIDS {<TV:GALMM_PAGE>
 } T This page has no kids
 
-NOKIDW {<TV:HVSMM_PAGE> <ESC>[31m*
+NOKIDW {<TV:GALMM_PAGE> <ESC>[31m*
 } T This page has no kids (warning type)
 
 MODSTART {<ESC>[1;37m
@@ -418,7 +418,7 @@ Module list:<ESC>[36m
 
 MODEND {} T Module list end
 
-ONEMOD {<TV:HVSMM_NUM:L:3>: <TV:HVSMM_TEXT:L:33>} T One module
+ONEMOD {<TV:GALMM_NUM:L:3>: <TV:GALMM_TEXT:L:33>} T One module
 
 MODBRK {
 } T Break in the module list
@@ -430,7 +430,7 @@ ABVIEW {
 SWAPWHER {<ESC>[1;36m
 Swap with which other menu selection? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Swap selection prompt
 
-SWAPOK {<ESC>[1;32m...Swapped selection <ESC>[37m<TV:HVSMM_NUM><ESC>[32m with <ESC>[37m<TV:HVSMM_NUM2><ESC>[32m.
+SWAPOK {<ESC>[1;32m...Swapped selection <ESC>[37m<TV:GALMM_NUM><ESC>[32m with <ESC>[37m<TV:GALMM_NUM2><ESC>[32m.
 } T Swapped ok
 
 SWAPBAD {<ESC>[1;35m...Invalid number!  Must be from 1 to 25.
@@ -439,27 +439,27 @@ SWAPBAD {<ESC>[1;35m...Invalid number!  Must be from 1 to 25.
 RENWHAT {<ESC>[1;36m
 Rename this page to what? (<ESC>[37m<CR>=Abort<ESC>[36m): } T Rename page
 
-REND {<ESC>[1;32m...Renamed page to: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+REND {<ESC>[1;32m...Renamed page to: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Renamed ok
 
 SEARCHW {<ESC>[1;36m
 Search for what text? (<ESC>[37mX=Abort<ESC>[36m): } T Search prompt
 
 SEARCHH {<ESC>[1;36m
-Searching for "<ESC>[37m<TV:HVSMM_VALUE><ESC>[36m"...<ESC>[0;36m
+Searching for "<ESC>[37m<TV:GALMM_VALUE><ESC>[36m"...<ESC>[0;36m
 
 Page name<ESC>[1;34m
 ----------------<ESC>[1;37m
 } T Searching header
 
-SEARCH1 {<TV:HVSMM_PAGE>
+SEARCH1 {<TV:GALMM_PAGE>
 } T Search hit one
 
 SEARCHMT {<ESC>[1;35m(No matches found!)
 } T No hits
 
 BADPAG {<ESC>[1;35m
-...Unable to <TV:HVSMM_ACTION> page: <TV:HVSMM_REASON>
+...Unable to <TV:GALMM_ACTION> page: <TV:GALMM_REASON>
 } T Bad page create/rename
 
 SETHDR {<ESC>[1;35m
@@ -469,21 +469,21 @@ Changes take effect immediately and are kept when the BBS restarts.
 
 } T Settings menu header
 
-SETLINE {  <ESC>[1;36m<TV:HVSMM_NUM:R:2>. <ESC>[32m<TV:HVSMM_LABEL:L:34><ESC>[0m.. <ESC>[1;37m<TV:HVSMM_VALUE>
+SETLINE {  <ESC>[1;36m<TV:GALMM_NUM:R:2>. <ESC>[32m<TV:GALMM_LABEL:L:34><ESC>[0m.. <ESC>[1;37m<TV:GALMM_VALUE>
 } T One line of the settings menu
 
 SETPROM {<ESC>[1;36m
-Change which setting? (<ESC>[37m1-<TV:HVSMM_NUM>, R=Reset all, X=Exit<ESC>[36m): } T Settings menu prompt
+Change which setting? (<ESC>[37m1-<TV:GALMM_NUM>, R=Reset all, X=Exit<ESC>[36m): } T Settings menu prompt
 
 SETVAL {<ESC>[1;36m
-<TV:HVSMM_LABEL> is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[36m
-Enter <TV:HVSMM_LIMIT>.
+<TV:GALMM_LABEL> is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[36m
+Enter <TV:GALMM_LIMIT>.
 New value? (<ESC>[37m<CR>=Keep<ESC>[36m): } T New value for a setting
 
-SETOK {<ESC>[1;32m...<TV:HVSMM_LABEL> is now: <ESC>[37m<TV:HVSMM_VALUE><ESC>[32m.
+SETOK {<ESC>[1;32m...<TV:GALMM_LABEL> is now: <ESC>[37m<TV:GALMM_VALUE><ESC>[32m.
 } T Setting changed
 
-SETBAD {<ESC>[1;35m...That value is not allowed.  Enter <TV:HVSMM_LIMIT>.
+SETBAD {<ESC>[1;35m...That value is not allowed.  Enter <TV:GALMM_LIMIT>.
 } T Setting value not allowed
 
 SETRST {<ESC>[1;36m
