@@ -1,0 +1,230 @@
+
+                          MENU MAGICIAN  v1.4.1
+                     for The Major BBS v10 (32-bit)
+
+     Copyright (c) 2026 Elwynor Technologies.
+     Originally Copyright (c) 1993-1996 High Velocity Software, Inc.
+     Menu Magician converted for The Major BBS v10 by Mark Laudenbach -
+     https://github.com/laudenbachm
+
+     Licensed under the GNU Affero General Public License v3.0.
+
+
+1. WHAT IS MENU MAGICIAN?
+-------------------------
+
+Menu Magician is an online menu tree editor.  With it you can restructure
+your menu tree without taking the BBS down: edit any page's settings and
+menu selections, create, rename, retype and delete pages, view the whole
+tree, and search it.  Almost everything the offline Menu Tree editor does,
+Menu Magician does while the board runs.
+
+Changes take effect as soon as you save a page.  That is the point of the
+module, and also its danger: see section 4 before you start.
+
+
+2. INSTALLING
+-------------
+
+  1. With the BBS down, copy GALMM.DLL, GALMM.MDF, GALMM.MSG and GALMM.RLN
+     into your BBS directory.
+  2. Run the Menu Tree editor and add Menu Magician to your menu.  Put the
+     SYSOP key (or another key only trusted sysops have) on BOTH the menu
+     selection and the module page.  Anyone who can use Menu Magician can
+     damage your menu tree.  A good choice is an orphan page that you
+     reach with /GO.
+  3. Start the BBS.  Menu Magician creates GALMMSET.DAT, its settings
+     file, on the first start.
+
+Upgrading from Menu Magician 1.03a or earlier (Worldgroup):
+
+  - With the BBS down, delete the old HVSMM.DLL, HVSMM.MDF, HVSMM.MSG and
+    HVSMM.MCV, then install the GALMM files as above.  The files were
+    renamed from HVSMM to GALMM in 1.4.1, so installing does not replace
+    the old ones.  The BBS builds GALMM.MCV from GALMM.MSG itself.
+  - No activation code is needed any more.
+  - The four configuration options (GLOKEY, GLOCMD, ORPHCMD, VIEWCMD) are
+    no longer in the configuration editor.  They start at their usual
+    defaults (SYSOP, EDIT, !NEW, !VIEW).  If you had changed them, set
+    them again online with !SETUP (section 5).
+  - The module name is now "Menu Magician" (it was "Menu Magician/WG").
+    The menu page that runs Menu Magician still names the old module, so
+    relink it: type EDIT on the menu page that leads to it, J to that
+    module page, M, and pick Menu Magician from the list (or use the
+    offline Menu Tree editor).
+  - Worldgroup's client/server menu tree is no longer edited: The Major
+    BBS v10 has terminal mode only.  Any client/server pages in the menu
+    file are left as they are.
+
+Upgrading from the 1.4.0 test build (HVSMM files):
+
+  - With the BBS down, delete HVSMM.DLL, HVSMM.MDF, HVSMM.MSG, HVSMM.MCV
+    and HVSMM.RLN, and install the GALMM files.  To keep your settings,
+    rename HVSMMSET.DAT to GALMMSET.DAT; otherwise Menu Magician starts
+    with the defaults.
+
+
+3. GETTING STARTED
+------------------
+
+There are two ways in:
+
+  - Select Menu Magician from the menu.  You are asked which page to
+    edit.  Type a page name such as TOP.
+  - Type EDIT at any menu prompt (you need the SYSOP key).  Menu Magician
+    opens the page you are on.  "EDIT GAMES" opens the GAMES page.  The
+    command and its key are settings (section 5).
+
+Only one person can use Menu Magician at a time.  Anyone else is told it
+is in use.
+
+At the "Edit which page?" prompt you can also type:
+
+  !NEW       create a new orphan page (a page with no parent menu; users
+             reach it with /GO)
+  !VIEW      show the whole menu tree, each page type in its own color.
+             Press Enter to stop it.
+  !SEARCH    list every page that mentions some text
+  !SETUP     change Menu Magician's own settings (sysops only)
+  ?          help
+  X          leave Menu Magician
+
+Prompts accept several answers at once, so "J GAMES" jumps straight to the
+GAMES page.
+
+
+4. A WORD OF WARNING
+--------------------
+
+Menu Magician changes the live menu tree.  If you delete or retype a page
+that someone is using, or that a user will return to, the menu system can
+be confused and, in the worst case, the BBS can stop.  Menu Magician warns
+you before every risky change, and warns more strongly when other users
+are online.  If you are not sure, answer No, and make the change offline
+or while nobody else is on.
+
+Some changes are refused outright: you cannot delete, rename or retype the
+TOP page, or the page you entered Menu Magician from.
+
+Changes to a page are not written until you save it with S.  If you leave
+a page with unsaved changes you are asked whether to save them.  If you
+hang up while editing, unsaved changes are lost.
+
+
+5. SETTINGS (!SETUP)
+--------------------
+
+Type !SETUP at the "Edit which page?" prompt.  You need the SYSOP key.
+Changes apply immediately, are kept when the BBS restarts, and are written
+to the Audit Trail.  R resets every setting to its default.
+
+  1. Key for the global edit command      default SYSOP
+     The key a user needs to use the global edit command.
+
+  2. Global edit command                  default EDIT
+     Typed at a menu prompt, opens Menu Magician on the current page.
+
+  3. Create-orphan-page command           default !NEW
+  4. View-menu-tree command               default !VIEW
+     Commands at the "Edit which page?" prompt.  Change them if they clash
+     with a global command from another module.
+
+The settings are stored in GALMMSET.DAT.  There are no options for them in
+the configuration editor.
+
+
+6. EDITING A PAGE
+-----------------
+
+Every page shows three common fields:
+
+  D  Disabled          a disabled page cannot be used until it is enabled
+  G  Allow /GO         whether users may /GO to this page
+  K  Key for /GO       the key needed to /GO here (X clears it)
+
+and these commands:
+
+  S  Save the page                 !  Delete the page (*)
+  J  Jump to another page          T  Change the page's type (*)
+  P  Jump to the parent page       R  Rename the page (*)
+  X  Stop editing this page        ?  Help
+                                   (*) risky: you are warned first
+
+File pages:
+
+  F  Display file        the file shown to the user
+  H  Display page header
+
+Module pages:
+
+  M  Module name         the module entered.  "?" lists the installed
+                         modules; pick one by number or type its name.
+                         A module that is not loaded yet loads at the next
+                         BBS restart.
+  C  Command string      passed to the module as if the user typed it
+                         (global commands are allowed here)
+  H  Display page header
+
+Menu pages:
+
+  A  Auto-select         route users to a selection by their keys
+  N  Default display     the BBS builds the menu from the selections
+  F  Display file(s)     base name of the menu file, when not default
+  L  Short title         the menu's title (the TITLE text variable)
+  M  List selections by description
+  C  List selections by destination page
+  1-25                   edit that menu selection
+
+On a menu page, J followed by one letter jumps through that selection, so
+"JT" goes from TOP to the page behind its T selection.
+
+
+7. EDITING A MENU SELECTION
+---------------------------
+
+Type a selection's number (1-25) on its menu page.
+
+  C  Selection character   the key users press.  It must be unique on
+                           the page.
+  H  Short description     the text in the default menu
+  A  Key required          users without it cannot use (or see) it
+  D  Display if no access  Hide, Dim or Show
+  P  Destination page      where it leads.  A new name creates the page
+                           (you are asked its type).  An orphan page's
+                           name adopts the orphan.  The page it led to
+                           before becomes an orphan.
+  W  Swap with another selection
+  S  Save the page
+  X  Back to the menu page
+
+A selection with no destination page is removed when you leave it.
+
+When you restrict a selection with a key, put the same key on the
+destination page's "Key for /GO", or users can reach it with /GO anyway.
+
+
+8. FILES
+--------
+
+  GALMM.DLL      the module
+  GALMM.MDF      module description
+  GALMM.MSG      all text, editable in the configuration editor.  Changing
+                 values appear as named text variables such as GALMM_PAGE,
+                 so you can reword messages freely.
+  GALMM.RLN      this manual
+  GALMMSET.DAT   settings (created on first start)
+
+Menu Magician edits the BBS's own menu file, WGSMENU2.DAT.  Back it up
+before large changes.
+
+
+9. VERSION HISTORY
+------------------
+
+  1.4.1  Files renamed from HVSMM to GALMM (GALMM.DLL, GALMM.MSG,
+         GALMMSET.DAT, GALMM_* text variables).  No other changes.
+  1.4.0  First release for The Major BBS v10.  No activation code.  The
+         settings moved from the configuration editor to the online !SETUP
+         screen.  Text uses named text variables.  Terminal mode only.
+         Module name "Menu Magician".  See CHANGELOG.MD for details.
+  1.03a  Last High Velocity Software release, for Worldgroup.
